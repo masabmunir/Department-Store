@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public class Department {
     @JsonProperty("id")
     @Id @GeneratedValue(strategy = AUTO)
     private Long departmentID;
+
+    @NotBlank(message = "Please add Department Name")
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
